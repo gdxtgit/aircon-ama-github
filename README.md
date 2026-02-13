@@ -32,3 +32,4 @@ git push -u origin main
 ## Notes
 - This is a snapshot; dynamic STUDIO backend behavior may not be fully reproducible.
 - If you need a fresh snapshot, run `node /Users/kn/Library/CloudStorage/GoogleDrive-kazutomo824@gmail.com/マイドライブ/1_Work/codex/scripts/mirror-site.mjs` from the workspace root.
+- GitHub Pages deployment for this repo is adjusted to run under `/aircon-ama-github/` (asset paths + Nuxt base path).
