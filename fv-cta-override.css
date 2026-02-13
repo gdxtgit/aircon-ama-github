@@ -1,0 +1,100 @@
+/* Home hero CTA only */
+.fv-cta-apply {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: min(680px, calc(100vw - 40px)) !important;
+  min-height: 132px !important;
+  padding: 24px 44px 24px 168px !important;
+  border-radius: 999px !important;
+  background: #68b531 !important;
+  border: 3px solid #68b531 !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16) !important;
+  overflow: visible !important;
+}
+
+.fv-cta-apply::before {
+  content: "\2709";
+  position: absolute;
+  left: -22px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid #68b531;
+  color: #68b531;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 66px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.fv-cta-apply,
+.fv-cta-apply * {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  font-size: clamp(38px, 4vw, 60px) !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+}
+
+.fv-cta-apply .fv-cta-kicker {
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #68b531;
+  color: #ffffff !important;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-size: clamp(20px, 2.2vw, 28px) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.2 !important;
+  white-space: nowrap;
+}
+
+.fv-cta-apply .fv-cta-kicker::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -16px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 16px solid #68b531;
+}
+
+@media (max-width: 840px) {
+  .fv-cta-apply {
+    min-width: min(92vw, 640px) !important;
+    min-height: 98px !important;
+    padding: 18px 24px 18px 120px !important;
+  }
+
+  .fv-cta-apply::before {
+    left: -12px;
+    width: 98px;
+    height: 98px;
+    font-size: 50px;
+  }
+
+  .fv-cta-apply,
+  .fv-cta-apply * {
+    font-size: clamp(30px, 7.5vw, 44px) !important;
+  }
+
+  .fv-cta-apply .fv-cta-kicker {
+    top: -52px;
+    padding: 8px 14px;
+    font-size: clamp(15px, 4.6vw, 22px) !important;
+  }
+}
