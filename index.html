@@ -3,144 +3,221 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AIRCON MART ACADEMY | TOP</title>
+  <title>AIRCON MART ACADEMY</title>
   <meta name="description" content="AIRCON MART ACADEMY 公式サイト" />
   <style>
     :root {
-      --bg: #f3f7fc;
-      --text: #1f3f66;
-      --blue: #1e7ad9;
-      --blue-dark: #1c5fa5;
+      --bg: #eef3f9;
       --card: #ffffff;
-      --line: #cfe0f5;
+      --line: #d1e0f3;
+      --text: #4e4f55;
+      --blue: #1f68eb;
+      --green: #69ba2f;
+      --green-dark: #58a826;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
       color: var(--text);
-      background: radial-gradient(circle at 10% 10%, #ffffff, var(--bg));
+      background: var(--bg);
     }
     .wrap {
-      max-width: 1200px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 24px 16px 64px;
+      padding: 22px 18px 64px;
     }
-    .topbar {
+    .header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 16px;
-      margin-bottom: 24px;
+      background: rgba(255,255,255,.95);
+      border-radius: 999px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
     }
-    .logo {
-      font-weight: 800;
-      font-size: 24px;
+    .brand {
+      font-weight: 900;
+      color: #204f86;
       letter-spacing: .02em;
-      color: var(--blue-dark);
+      text-decoration: none;
+      font-size: clamp(16px, 2vw, 30px);
     }
-    .cta {
+    .head-cta {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 999px;
-      padding: 12px 22px;
       text-decoration: none;
-      font-weight: 700;
       color: #fff;
-      background: linear-gradient(90deg, var(--blue), #2f8df0);
-      box-shadow: 0 8px 20px rgba(30, 122, 217, .22);
+      font-weight: 800;
+      border-radius: 999px;
+      background: var(--green);
+      padding: 10px 28px;
+      min-height: 52px;
+      box-shadow: inset 0 -2px 0 rgba(0,0,0,.08);
     }
-    .hero {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 32px 24px;
-      margin-bottom: 24px;
+    .fv {
+      position: relative;
+      min-height: min(74vh, 760px);
+      border-radius: 18px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255,255,255,.72), rgba(255,255,255,.72)),
+        url('https://storage.googleapis.com/production-os-assets/assets/125e5218-3af4-497f-9022-c8c3c93e4f59') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: clamp(24px, 5vw, 72px);
     }
-    .hero h1 {
-      margin: 0 0 12px;
-      font-size: clamp(28px, 4.2vw, 52px);
-      color: var(--blue-dark);
-      line-height: 1.2;
+    .copy {
+      max-width: 780px;
     }
-    .hero p {
+    .copy .line1 {
       margin: 0;
-      color: #3d648f;
-      font-size: clamp(14px, 2vw, 18px);
-      line-height: 1.8;
+      font-size: clamp(30px, 4vw, 76px);
+      line-height: 1.25;
+      font-style: italic;
+      font-weight: 800;
+      color: #55565d;
     }
-    .nav-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin: 24px 0 34px;
+    .copy .line1 .blue { color: var(--blue); }
+    .copy .line2 {
+      margin: 0;
+      font-size: clamp(46px, 7.2vw, 120px);
+      line-height: 1.08;
+      font-style: italic;
+      font-weight: 900;
+      color: #55565d;
     }
-    .nav-grid a {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 14px 16px;
+    .copy .line2 .blue { color: var(--blue); }
+
+    .fv-cta-wrap {
+      margin-top: clamp(14px, 2.2vw, 26px);
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .fv-tag {
+      background: var(--green);
+      color: #fff;
+      font-size: clamp(16px, 1.6vw, 28px);
+      font-weight: 800;
+      line-height: 1;
+      padding: 6px 14px;
+      position: relative;
+      border-radius: 3px;
+    }
+    .fv-tag::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 10px solid var(--green);
+    }
+    .fv-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
       text-decoration: none;
-      color: var(--blue-dark);
-      font-weight: 700;
+      background: var(--green);
+      border: 2px solid var(--green-dark);
+      border-radius: 999px;
+      overflow: hidden;
+      min-height: clamp(62px, 5.1vw, 82px);
+      min-width: clamp(250px, 26vw, 400px);
+      box-shadow: 0 8px 22px rgba(79, 147, 33, .18);
+    }
+    .fv-cta .icon {
+      width: clamp(62px, 5.1vw, 82px);
+      height: clamp(62px, 5.1vw, 82px);
+      display: grid;
+      place-items: center;
+      background: #fff;
+      color: var(--green);
+      border-right: 2px solid var(--green-dark);
+      font-size: clamp(28px, 2.5vw, 36px);
+    }
+    .fv-cta .label {
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: .01em;
+      font-size: clamp(24px, 3.1vw, 46px);
+      padding: 0 30px 0 26px;
+    }
+
+    .feature-link {
+      margin-top: 28px;
+      background: #d5e6f9;
+      border: 1px solid #bdd6f3;
+      border-radius: 14px;
+      padding: 22px 18px;
       text-align: center;
     }
-    .feature-card {
-      background: linear-gradient(135deg, #e8f2ff, #d6eaff);
-      border: 1px solid #b9d5f6;
-      border-radius: 20px;
-      padding: 22px;
-      text-align: center;
+    .feature-link h2 {
+      margin: 0 0 10px;
+      color: #205eaa;
+      font-size: clamp(24px, 2.8vw, 44px);
     }
-    .feature-card h2 {
-      margin: 0 0 8px;
-      font-size: clamp(22px, 3vw, 36px);
-      color: var(--blue-dark);
+    .feature-link p {
+      margin: 0 0 14px;
+      color: #305e8f;
+      font-size: clamp(14px, 1.4vw, 22px);
     }
-    .feature-card p {
-      margin: 0 0 16px;
-      color: #315f8f;
-      font-size: clamp(14px, 1.8vw, 18px);
+    .feature-link a {
+      display: inline-flex;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(90deg, #2c82df, #2e90ef);
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-weight: 800;
+      font-size: clamp(15px, 1.2vw, 18px);
     }
-    @media (max-width: 840px) {
-      .wrap { padding: 16px 12px 40px; }
-      .topbar { margin-bottom: 14px; }
-      .logo { font-size: 18px; }
-      .hero { border-radius: 14px; padding: 18px 14px; }
-      .nav-grid { grid-template-columns: 1fr; }
-      .feature-card { border-radius: 14px; padding: 16px 14px; }
-      .cta { width: 100%; }
-      .topbar { flex-direction: column; align-items: stretch; }
+
+    @media (max-width: 920px) {
+      .wrap { padding: 14px 10px 40px; }
+      .header { padding: 10px 12px; }
+      .head-cta { min-height: 42px; padding: 8px 16px; font-size: 14px; }
+      .fv { min-height: 420px; border-radius: 12px; padding: 18px 14px; }
+      .copy .line1 { font-size: clamp(18px, 8vw, 40px); }
+      .copy .line2 { font-size: clamp(36px, 12vw, 62px); }
+      .fv-cta .label { padding: 0 18px 0 14px; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header class="topbar">
-      <div class="logo">AIRCON MART ACADEMY</div>
-      <a class="cta" href="/aircon-ama-github/contact/">お問い合わせ</a>
+    <header class="header">
+      <a class="brand" href="/aircon-ama-github/">AIRCON MART ACADEMY</a>
+      <a class="head-cta" href="/aircon-ama-github/contact/">資料請求</a>
     </header>
 
-    <section class="hero">
-      <h1>TOP</h1>
-      <p>このページはナビゲーション中心に再構成しています。<br>研修特徴コンテンツは第2階層ページに移動しました。</p>
+    <section class="fv">
+      <div class="copy">
+        <p class="line1">弟子入りより<span class="blue">速く、</span>独学より<span class="blue">確実な</span></p>
+        <p class="line2">エアコン<span class="blue">取り付け講習</span></p>
+
+        <div class="fv-cta-wrap">
+          <div class="fv-tag">技術を身につける</div>
+          <a class="fv-cta" href="/aircon-ama-github/contact/">
+            <span class="icon">✉</span>
+            <span class="label">お申し込み</span>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <section class="feature-card">
+    <section class="feature-link">
       <h2>研修特徴</h2>
       <p>Case01〜04、不安ブロック、青背景コンセプト、市場性、課題→解、研修紹介を掲載</p>
-      <a class="cta" href="/aircon-ama-github/training-features/">研修特徴を見る</a>
+      <a href="/aircon-ama-github/training-features/">研修特徴を見る</a>
     </section>
-
-    <nav class="nav-grid" aria-label="グローバルナビゲーション">
-      <a href="/aircon-ama-github/training-features/">研修特徴</a>
-      <a href="/aircon-ama-github/course/">研修紹介</a>
-      <a href="/aircon-ama-github/trade/">特定商取引法</a>
-      <a href="/aircon-ama-github/rules/">受講規約</a>
-      <a href="/aircon-ama-github/contact/">お問い合わせ</a>
-      <a href="/aircon-ama-github/">TOP</a>
-    </nav>
   </div>
 </body>
 </html>
