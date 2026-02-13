@@ -1,320 +1,277 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AIRCON MART ACADEMY | 研修特徴</title>
-  <meta name="description" content="AIRCON MART ACADEMY 研修特徴ページ" />
-  <style>
-    :root {
-      --bg: #eef4fb;
-      --panel: #ffffff;
-      --line: #bfd6f2;
-      --text: #214a79;
-      --blue: #2d82df;
-      --blue-deep: #1f5fa9;
-      --muted: #aeb8c4;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>研修特徴</title>
+<style>
+  :root {
+    --bg: #eef4fb;
+    --panel: #ffffff;
+    --line: #c8dcf5;
+    --text: #1f4873;
+    --blue: #2f82df;
+    --blue-dark: #1f5fa8;
+    --gray: #aeb8c4;
+    --green: #69ba2f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+  }
+  .wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 12px 56px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 999px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+  }
+  .brand {
+    text-decoration: none;
+    color: var(--blue-dark);
+    font-weight: 900;
+    letter-spacing: .02em;
+    font-size: clamp(16px, 2vw, 24px);
+  }
+  .header-cta {
+    text-decoration: none;
+    background: var(--green);
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-weight: 700;
+  }
+  main section {
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 22px 16px;
+    margin-bottom: 16px;
+  }
+  .hero {
+    background: linear-gradient(130deg, #eaf3ff 0%, #d8eaff 100%);
+  }
+  h1, h2, h3 { margin: 0 0 12px; }
+  h1 { font-size: clamp(32px, 5vw, 52px); color: var(--blue-dark); }
+  h2 { font-size: clamp(24px, 3.2vw, 36px); color: var(--blue); }
+  h3 { font-size: clamp(20px, 2.6vw, 28px); }
+  p { margin: 0 0 10px; line-height: 1.8; }
+
+  .case-list,
+  .anxiety-list,
+  .market,
+  .problem-list {
+    display: grid;
+    gap: 12px;
+  }
+  .case-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .case-card,
+  .anxiety-card,
+  .market-block,
+  .problem-card,
+  .training-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px;
+  }
+  .case-card h3 { color: var(--blue); }
+  .case-card > p:first-of-type {
+    background: var(--gray);
+    color: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+  }
+  .case-card .solution {
+    background: var(--blue);
+    color: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 10px 0 0;
+    font-weight: 700;
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+  }
+
+  .anxiety-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .anxiety-card {
+    background: #f2f7ff;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .concept {
+    background: linear-gradient(180deg, #2f82df 0%, #1f5fa8 100%);
+    color: #fff;
+    text-align: center;
+  }
+  .concept h2,
+  .concept h3 { color: #fff; }
+
+  .market {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .problem-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .problem .solution {
+    margin-top: 12px;
+    background: var(--blue);
+    color: #fff;
+    border-radius: 999px;
+    padding: 12px 14px;
+    text-align: center;
+  }
+
+  .footer {
+    margin-top: 24px;
+    background: #1e4772;
+    color: #fff;
+    border-radius: 14px;
+    padding: 16px;
+    text-align: center;
+  }
+  .footer-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.95;
+  }
+
+  @media (max-width: 900px) {
+    .case-list,
+    .anxiety-list,
+    .market,
+    .problem-list {
+      grid-template-columns: 1fr;
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-      background: linear-gradient(180deg, #f4f8fd 0%, #e9f2fc 55%, #edf4fc 100%);
-      color: var(--text);
-    }
-    .wrap {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 24px 16px 72px;
-    }
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-    .logo {
-      font-weight: 800;
-      font-size: 28px;
-      color: var(--blue-deep);
-      letter-spacing: .02em;
-      text-decoration: none;
-    }
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      color: #fff;
-      background: linear-gradient(90deg, var(--blue), #2f92f0);
-      border-radius: 999px;
-      padding: 12px 22px;
-      font-weight: 700;
-    }
-    .lead {
-      background: #eaf2fc;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 28px 24px;
-      margin-bottom: 24px;
-    }
-    h1 {
-      margin: 0 0 8px;
-      font-size: clamp(34px, 4.4vw, 56px);
-      line-height: 1.1;
-      color: var(--blue-deep);
-    }
-    .lead p {
-      margin: 0;
-      font-size: clamp(14px, 1.9vw, 28px);
-      color: #3f6691;
-      line-height: 1.7;
-    }
-    .section {
-      margin-top: 26px;
-      background: rgba(255,255,255,.55);
-      border: 1px solid #c9dcf3;
-      border-radius: 24px;
-      padding: 24px;
-    }
-    .section h2 {
-      margin: 0 0 16px;
-      color: var(--blue);
-      font-size: clamp(24px, 3vw, 40px);
-    }
-    .cards-4 {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .cards-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px;
-      line-height: 1.7;
-    }
-    .card.case-top {
-      background: #aeb8c4;
-      color: #fff;
-      font-weight: 700;
-      text-align: center;
-      min-height: 118px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .card.case-bottom {
-      background: #2d82df;
-      color: #fff;
-      text-align: center;
-      min-height: 96px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-    }
-    .case-label {
-      text-align: center;
-      color: var(--blue);
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-    .case-col {
-      display: grid;
-      gap: 8px;
-    }
-    .blue-panel {
-      margin-top: 24px;
-      background: linear-gradient(180deg, #2d82df 0%, #1e63b2 100%);
-      color: #fff;
-      border-radius: 24px;
-      padding: 36px 22px;
-      text-align: center;
-    }
-    .blue-panel h3 {
-      font-size: clamp(26px, 3.4vw, 46px);
-      line-height: 1.4;
-      margin: 0 0 16px;
-    }
-    .blue-panel p {
-      margin: 0;
-      line-height: 2;
-      font-size: clamp(15px, 1.8vw, 26px);
-    }
-    .flow {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-    .flow .card {
-      text-align: center;
-      font-weight: 700;
-      min-height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .solve {
-      margin-top: 14px;
-      background: #2d82df;
-      color: #fff;
-      border-radius: 999px;
-      text-align: center;
-      padding: 14px 16px;
-      font-size: clamp(20px, 2.4vw, 34px);
-      font-weight: 800;
-    }
-    .point {
-      background: linear-gradient(90deg, #40a2ef, #2d82df);
-      color: #fff;
-      border-radius: 22px;
-      padding: 16px;
-      margin-top: 14px;
-    }
-    .point small {
-      display: block;
-      opacity: .95;
-      margin-bottom: 8px;
-      font-size: 22px;
-    }
-    .point strong {
-      display: block;
-      font-size: clamp(22px, 2.4vw, 34px);
-      margin-bottom: 8px;
-    }
-    .point p {
-      margin: 0;
-      line-height: 1.9;
-      font-size: clamp(14px, 1.5vw, 20px);
-    }
-    @media (max-width: 1024px) {
-      .cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .flow { grid-template-columns: 1fr; }
-      .cards-3 { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 640px) {
-      .wrap { padding: 14px 10px 48px; }
-      .logo { font-size: 20px; }
-      .topbar { flex-direction: column; align-items: stretch; }
-      .cta { width: 100%; }
-      .lead, .section, .blue-panel { border-radius: 14px; padding: 16px 12px; }
-      .cards-4 { grid-template-columns: 1fr; }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="topbar">
-      <a class="logo" href="/aircon-ama-github/">AIRCON MART ACADEMY</a>
-      <a class="cta" href="/aircon-ama-github/contact/">お問い合わせ</a>
-    </header>
+<div class="wrap">
+  <header class="header">
+    <a class="brand" href="/aircon-ama-github/">AIRCON MART ACADEMY</a>
+    <a class="header-cta" href="/aircon-ama-github/contact/">資料請求</a>
+  </header>
 
-    <section class="lead">
+  <main>
+    <section class="hero">
       <h1>研修特徴</h1>
-      <p>TOPで紹介していた研修特徴コンテンツをまとめています。</p>
+      <p>技術習得および独立への近道になります。</p>
     </section>
 
-    <section class="section" id="case">
-      <h2>事前に こんな事知りたくなかったですか？</h2>
-      <div class="cards-4">
-        <div class="case-col">
-          <div class="case-label">Case 01</div>
-          <div class="card case-top">弟子入りするだけでは自分の給与は増えない</div>
-          <div class="card case-bottom">主体的に学ぶことが大事</div>
+    <section class="cases">
+      <h2>事前にこんな事知りたくなかったですか？</h2>
+      <div class="case-list">
+        <div class="case-card">
+          <h3>Case 01</h3>
+          <p>弟子入りするだけでは自分の給与は増えない</p>
+          <p class="solution">主体的に学ぶことが大事</p>
         </div>
-        <div class="case-col">
-          <div class="case-label">Case 02</div>
-          <div class="card case-top">弟子入りしただけじゃ、お客様の家を実際に取付できない</div>
-          <div class="card case-bottom">確かな技術が無ければ親方も仕事を与えづらい</div>
+        <div class="case-card">
+          <h3>Case 02</h3>
+          <p>弟子入りしただけじゃ、お客様の家を実際に取付できない</p>
+          <p class="solution">確かな技術が無ければ仕事を与えづらい</p>
         </div>
-        <div class="case-col">
-          <div class="case-label">Case 03</div>
-          <div class="card case-top">効率よく丁寧な取付を最初に学べばもっと早く独立できたかも</div>
-          <div class="card case-bottom">親方も忙しく、弟子に教えられない</div>
+        <div class="case-card">
+          <h3>Case 03</h3>
+          <p>効率よく丁寧な取付を最初に学べばもっと早く独立できたかも</p>
+          <p class="solution">親方も忙しく、弟子に教えられない</p>
         </div>
-        <div class="case-col">
-          <div class="case-label">Case 04</div>
-          <div class="card case-top">取付技術だけではなく、仕事の取り方や単価アップの秘訣も独立前に学べばよかった</div>
-          <div class="card case-bottom">独立に対する対策を事前に打てばよかった</div>
+        <div class="case-card">
+          <h3>Case 04</h3>
+          <p>取付技術だけでなく、仕事の取り方や単価アップの秘訣も学びたい</p>
+          <p class="solution">独立に対する対策を事前に打てばよかった</p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="anxiety">
-      <h2>現在の仕事に対して こんな不安はありませんか？</h2>
-      <div class="cards-3">
-        <article class="card">長期的な事業を目指したい。ただ競合が多くて集客が不安。</article>
-        <article class="card">職人的な業務は未経験で技術面が不安。</article>
-        <article class="card">いまの仕事を続けても、将来につながる技術があるのか不安。</article>
-      </div>
-      <div class="blue-panel">
-        <h3>現在の職人業は言語化がされておらず、<br>寿司職人の弟子入りと似ています。</h3>
-        <p>始める前に知識と基礎技術を得ることで技術を持つこと、独立へのハードルが下がること。<br>リフォーム業者などは既存業務と組み合わせることで、収益が上がること。<br><br>職人が1年目および始める前に感じた不安面を、本研修で取り除きます。<br><br><strong>技術習得および独立への近道になります。</strong></p>
+    <section class="anxiety">
+      <h2>現在の仕事に対してこんな不安はありませんか？</h2>
+      <div class="anxiety-list">
+        <div class="anxiety-card">将来の収入が不安</div>
+        <div class="anxiety-card">技術が身についているか分からない</div>
+        <div class="anxiety-card">独立できるか不安</div>
       </div>
     </section>
 
-    <section class="section" id="market">
-      <h2>エアコン取付市場が伸び続ける理由</h2>
-      <div class="cards-3">
-        <article class="card">
-          <strong>エアコン普及率は約9割超え、1世帯あたり約3台弱</strong><br>
-          日本ではすでに91.8%の世帯にエアコンが普及しており、入替・買替需要が継続します。
-        </article>
-        <article class="card">
-          <strong>マンション・集合住宅の比率が高まり続けている</strong><br>
-          戸建52.7%・集合住宅44.9%、総住戸数は約6,500万戸規模。更新需要も継続見込みです。
-        </article>
-        <article class="card">
-          <strong>賃貸オーナーは「エアコン完備」で空室リスクを避けたい</strong><br>
-          「エアコン完備」は賃貸募集で当たり前。賃貸物件での設置・更新ニーズは今後も続きます。
-        </article>
+    <section class="concept">
+      <h2>現在の職人業は言語化がされておらず、寿司職人の弟子入りと似ています。</h2>
+      <p>
+        始める前に知識と基礎技術を得ることで技術を持つこと、
+        独立へのハードルが下がること。
+      </p>
+      <p>
+        職人が年目および始める前に感じた不安面を、本研修で取り除きます。
+      </p>
+      <h3>技術習得および独立への近道になります。</h3>
+    </section>
+
+    <section class="market">
+      <h2 style="grid-column: 1 / -1;">エアコン取付市場が伸び続ける理由</h2>
+      <div class="market-block">
+        <p>エアコン普及率は約9割超え</p>
+        <p>入れ替え需要は今後も続きます</p>
+      </div>
+      <div class="market-block">
+        <p>集合住宅の回転率増加</p>
+        <p>設備更新需要が継続</p>
       </div>
     </section>
 
-    <section class="section" id="difference">
-      <h2>そもそもなぜ現場レベルで技術取得に差が生まれるのか？</h2>
-      <div class="flow">
-        <article class="card">
-          <div>課題01</div>
-          <div>見て覚える文化</div>
-          <div style="color:#2d82df; font-size:28px;">技術の言語化がされてない</div>
-        </article>
-        <article class="card">
-          <div>課題02</div>
-          <div>若手に任せづらい環境</div>
-          <div style="color:#2d82df; font-size:28px;">若手に任せると現場が遅延</div>
-        </article>
-        <article class="card">
-          <div>課題03</div>
-          <div>若手が育ちにくい環境</div>
-          <div style="color:#2d82df; font-size:28px;">若手に任せると現場が遅延</div>
-        </article>
+    <section class="problem">
+      <h2>なぜ現場レベルで技術取得に差が生まれるのか？</h2>
+      <div class="problem-list">
+        <div class="problem-card">技術が言語化されていない</div>
+        <div class="problem-card">若手に任せづらい環境</div>
+        <div class="problem-card">育成が体系化されていない</div>
       </div>
-      <div class="solve">学ぶ場所が変われば、技術の取得スピードは段違いです</div>
+      <h3 class="solution">
+        学ぶ場所が変われば、技術の取得スピードは段違いです
+      </h3>
     </section>
 
-    <section class="section" id="training">
+    <section class="training">
       <h2>研修紹介</h2>
-      <article class="point">
-        <small>Point01</small>
-        <strong>座学</strong>
-        <p>エアコンの仕組みを基礎から学びます。取付時にミスが起こりやすいポイントや、現場でつまずきやすい点を整理しながら解説。お客様への説明方法や提案の仕方も学び、単価アップにつながる考え方を身につけます。</p>
-      </article>
-      <article class="point">
-        <small>Point02</small>
-        <strong>実機を見たうえでの知識習得</strong>
-        <p>実際の機材・工具を確認し、配管接続、真空引き、試運転までの流れを段階的に学習します。現場を想定したチェックポイントを言語化し、再現できる形で定着させます。</p>
-      </article>
+      <div class="training-card">
+        <h3>座学</h3>
+        <p>
+          エアコンの仕組みを基礎から学び、
+          現場でつまずきやすいポイントを整理します。
+        </p>
+      </div>
     </section>
-  </div>
+  </main>
+
+  <footer class="footer">
+    <nav class="footer-nav">
+      <a href="/aircon-ama-github/">TOP</a>
+      <a href="/aircon-ama-github/training-features/">研修特徴</a>
+      <a href="/aircon-ama-github/course/">研修紹介</a>
+      <a href="/aircon-ama-github/contact/">お問い合わせ</a>
+    </nav>
+    <small>© AIRCON MART ACADEMY</small>
+  </footer>
+</div>
 </body>
 </html>
